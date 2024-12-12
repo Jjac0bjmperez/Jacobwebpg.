@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Jacob John Michael P.</title>
+    <style>
+        .projects-container {
+    display: flex;
+    gap: 20px; /* Adjust the spacing between projects */
+    justify-content: center; /* Center the projects horizontally */
+    align-items: flex-start; /* Align items to the top */
+    flex-wrap: wrap; /* Wrap items on smaller screens */
+}
+.project {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px; /* Set a fixed width for consistency */
+    text-align: center; /* Center align content within each project */
+    transition: transform 0.3s ease;
+}
+
+.project:hover {
+    transform: scale(1.05);
+}
+
+.projects-container img {
+    margin-bottom: 10px;
+    width: 200px;
+    height: 200px;
+}
+.description {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+.project .description {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark overlay */
+    color: white;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    padding: 10px;
+}
+
+.project:hover {
+    transform: scale(1.05); /* Slightly enlarge the project card on hover */
+}
+
+.project:hover .description {
+    display: flex; /* Show description on hover */
+}
+
+        body {
+    background-color: #fff;
+    color: #333;
+    transition: all 0.3s ease;
+}
+.contact-info img {
+    width:50px;
+    height:50px;
+    border-radius:25px;
+    gap:100px;
+}
+        .sliding-text {
+    font-size: 32px;
+    font-weight: bold;
+    position: relative;
+    animation: slideIn 1.5s ease-out forwards;
+}
+
+@keyframes slideIn {
+    0% {
+        left: -100%;
+        opacity: 0;
+    }
+    100% {
+        left: 0;
+        opacity: 1;
+    }
+}
+
+        .gradient-button {
+    padding: 15px 30px;
+    background: linear-gradient(45deg, #e63946, #f77f00);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.gradient-button::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: #fff;
+    transition: all 0.4s ease;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+
+.gradient-button:hover::before {
+    width: 0;
+    height: 0;
+    opacity: 1;
+}
+
+.gradient-button:hover {
+    background: linear-gradient(45deg, #f77f00, #e63946);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff5f5;
+            color: #333;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        header {
+            background: linear-gradient(to right, #e63946, #f77f00);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #fff5f5;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        nav a:hover, nav a.active {
+            color: #e63946;
+        }
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+            margin-top: 70px;
+        }
+        .homepage {
+            text-align: center;
+            padding: 50px 20px;
+            animation: fadeIn 1s ease;
+        }
+        .homepage img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid #e63946;
+            margin-bottom: 20px;
+        }
+        .sdg-section {
+            margin-top: 50px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .sdg-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+        .about {
+            text-align: center;
+            padding: 50px 20px;
+            animation: slideIn 1s ease;
+        }
+        .skills {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease;
+        }
+        .skills ul {
+            list-style: none;
+            padding: 0;
+        }
+        .skills ul li {
+            padding: 5px 0;
+        }
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .project {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 1s ease;
+            transition: transform 0.3s ease;
+        }
+        .project:hover {
+            transform: scale(1.05);
+        }
+        .project img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            margin-top: 20px;
+        }
+        .contact {
+            text-align: center;
+            padding: 50px 20px;
+            animation: slideIn 1s ease;
+        }
+        .contact-icons {
+            margin-top: 20px;
+        }
+        .contact-icons a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: white;
+            font-size: 24px;
+            background-color: #e63946;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease;
+        }
+        .contact-icons a:hover {
+            background-color: #f77f00;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        button {
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #e63946;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: block;
+        }
+        button:hover {
+            background-color: #f77f00;
+        }
+        @media (max-width: 768px) {
+            .projects {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<div class="loader"></div>
+<body>
+    <header>
+        <h2 class="sliding-text">Jacob John Michael P.</h2>
+        <h2 class="sliding-text">WELCOME, VISIT MY PORTPOLIO ABOUT ME AND SDG 4</h2>
+    </header>
+
+    <nav>
+        <a href="#homepage">Home</a>
+        <a href="#about">About Me</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="container">
+        <section id="homepage" class="homepage">
+            <h2>Welcome to My Portfolio</h2>
+            <img src="img/professional.jpg.jpg" alt="my professional photo">
+            <p>Hello! My name is Jacob John Michael P., a first-year IT student passionate about technology and its role in improving lives. I strive to bridge the gap between technology and human connection.</p>
+            <div class="sdg-section">
+                <h3>Selected Sustainable Development Goal (SDG4) Quality Education</h3>
+                <p>Quality education is essential for creating a better world. It ensures equal opportunities for all, empowers individuals, and drives economic growth. I am committed to contributing to this goal by leveraging ICT tools to enhance educational access and efficiency.</p>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <h2>About Me</h2>
+            <p>I am an aspiring web developer and i study in Batangas State University as first-year IT student, Im passionate about how technology can improve access to education. My goal is to contribute to Quality Education (SDG4) through innovate solutions that enhance learning experience for all. </p>
+        </section>
+
+        <section id="skills" class="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>HTML, CSS,</li>
+                <li>Web Developer</li>
+                <li>ICT Integration in Education</li>
+            </ul>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2>Contact Me</h2>
+            <p>If you would like to get in touch, feel free to reach out to me via the links below:</p>
+            
+            <div class="contact-info">
+                <a href="https://www.instagram.com/yourusername" target="_blank" title="Instagram" class="contact-icon left">
+                    <img src="img/instagram.jpg.jpg" alt="Instagram Icon">
+                </a>
+                
+                <a href="mailto:youremail@gmail.com" target="_blank" title="Email" class="contact-icon center">
+                    <img src="img/gmail.jpg.png" alt="Email Icon">
+                </a>
+                
+                <a href="https://www.facebook.com/yourusername" target="_blank" title="Facebook" class="contact-icon right">
+                    <img src="img/facebook.jpg.jpg" alt="Facebook Icon">
+                </a>
+            </div>
+        </section>        
+        
+ <section id="projects" class="projects">
+    <div class="container">
+        <h2>Projects</h2>
+        <div class="projects-container">
+            <!-- First Project -->
+            <div class="project">
+                <h3>Project 1</h3>
+                <img src="img/education meeting.jpg.jpg" alt="Project 1">
+                <div class="description">
+                    <p>A meeting for better Quality Education.</p>
+                </div>
+            </div>
+
+            <!-- Second Project -->
+            <div class="project">
+                <h3>Project 2</h3>
+                <img src="img/better education awareness.jpg.jpg" alt="Project 2">
+                <div class="description">
+                    <p>Spreading advocacy to other people.</p>
+                </div>
+            </div>
+
+            <!-- Third Project -->
+            <div class="project">
+                <h3>Project 3</h3>
+                <img src="img/nutriapp.jpg.webp" alt="Project 3">
+                <div class="description">
+                    <p>A mobile application that helps student with their diet and for their time management.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+        
+        <footer>
+            <p>&copy; 2024 Jacob John Michael
+            
